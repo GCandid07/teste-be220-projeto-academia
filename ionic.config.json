@@ -1,0 +1,7 @@
+{
+  "name": "teste-be220-projeto-academia",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular-standalone"
+}
