@@ -1,0 +1,49 @@
+ion-card {
+  display: inline-block;
+  border-radius: 8px;
+  position: relative;
+  overflow: hidden;
+  margin: 0;
+  width: 250px;
+  height: 150px;
+  background: var(--course-card-background-image, #333) center/cover no-repeat;
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(to top, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0) 50%, rgba(0,0,0,0.5) 100%);
+    z-index: 1;
+  }
+
+  .card-overlay-text {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    z-index: 2;
+    padding: 10px;
+    width: 100%;
+    color: white;
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.7);
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .continue-training {
+    font-size: 0.8rem;
+    color: var(--ion-color-primary);
+    font-weight: 500;
+  }
+
+  .program-title {
+    font-size: 1.1rem;
+    font-weight: bold;
+    white-space: normal;
+    line-height: 1.2;
+    margin-top: 5px;
+  }
+}

@@ -1,0 +1,8 @@
+<ion-card [class]="cardClass" [style]="cardStyles">
+  <div class="card-overlay-text">
+    @if (subtitle) {
+      <span class="ion-text-capitalize continue-training">{{ subtitle }}</span>
+    }
+    <span class="program-title">{{ title }}</span>
+  </div>
+</ion-card>
