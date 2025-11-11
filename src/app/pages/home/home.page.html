@@ -1,0 +1,107 @@
+<ion-header class="main-header" [style.height]="currentHeaderHeight">
+  <ion-toolbar class="main-toolbar">
+    <ion-buttons slot="start">
+      <ion-button (click)="openSideMenu()" color="white">
+        <ion-icon slot="icon-only" name="menu-outline" />
+      </ion-button>
+    </ion-buttons>
+
+    <ion-title class="ion-text-center">
+      <img src="assets/logo-be220.svg" alt="Logo Be220" class="header-logo">
+    </ion-title>
+
+    <ion-buttons slot="end">
+      <ion-button (click)="openNotifications()" color="primary">
+        <ion-icon slot="icon-only" name="notifications-outline" />
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+
+  <div
+    class="profile-condensing-area profile-content-padding"
+    *ngIf="userData$ | async as user"
+    [style.opacity]="currentProfileOpacity"
+    [style.transform]="'scale(' + currentProfileScale + ')'"
+    style="transform-origin: center top;"
+  >
+    <div class="profile-info-row">
+      <div
+        class="profile-photo"
+        [style.backgroundImage]="'url(' + user.profilePicture + ')'"
+        (click)="handleProfilePhotoClick()"
+      ></div>
+
+      <div class="user-details">
+        <span class="user-name">{{ user.displayName }}</span>
+        <span class="user-level ion-text-capitalize ion-color-secondary-text">
+          Nível: {{ user.level }}
+        </span>
+      </div>
+    </div>
+
+    <div class="quick-actions">
+      <ion-button expand="block" fill="clear" color="primary" size="small">
+        <ion-icon slot="start" name="body-outline" />
+        Meu Corpo
+      </ion-button>
+
+      <ion-button expand="block" fill="clear" color="primary" size="small">
+        <ion-icon slot="start" name="trophy-outline" />
+        Objetivos e Conquistas
+      </ion-button>
+    </div>
+  </div>
+</ion-header>
+
+<ion-content scrollEvents="true" (ionScroll)="handleScroll($event)">
+  <div class="content-wrapper">
+    <h3 class="section-title">
+      PERSONAL ONLINE
+      <ion-icon name="add-circle-outline" />
+    </h3>
+    <div class="horizontal-scroll-section">
+      <div class="card-horizontal-container">
+        <app-action-card
+          (actionClick)="handleNewWorkout()"
+          [imageUrl]="'assets/images/lifter-mock.jpg'"
+        />
+
+        @for (course of personalOnlineCourses; track course.title) {
+          <app-course-card
+            [title]="course.title"
+            [subtitle]="course.subtitle"
+            [imageUrl]="course.imageUrl"
+          />
+        }
+      </div>
+    </div>
+
+    <h3 class="section-title">
+      PROGRAMAS <span class="badge">NOVO</span>
+    </h3>
+    <div class="horizontal-scroll-section">
+      <div class="card-horizontal-container">
+        @for (program of programs; track program.title) {
+          <app-course-card
+            [title]="program.title"
+            [subtitle]="program.subtitle"
+            [imageUrl]="program.imageUrl"
+          />
+        }
+      </div>
+    </div>
+
+    <h3 class="section-title">CONTEÚDOS</h3>
+    <div class="horizontal-scroll-section last-section">
+      <div class="card-horizontal-container">
+        @for (item of contentItems; track $index) {
+          <app-course-card
+            [title]="item.title"
+            [cardClass]="item.cardClass"
+            [imageUrl]="item.imageUrl"
+          />
+        }
+      </div>
+    </div>
+  </div>
+</ion-content>

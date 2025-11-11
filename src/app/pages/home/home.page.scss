@@ -1,0 +1,210 @@
+$profile-area-height: 120px;
+$toolbar-height: 46px;
+$top-safe-area: var(--ion-safe-area-top, 0px);
+$full-header-height: calc($top-safe-area + $toolbar-height + $profile-area-height);
+$condensed-header-height: calc($top-safe-area + $toolbar-height);
+
+:host {
+  ion-content {
+    --background: var(--ion-background-color);
+    --padding-top: #{$full-header-height};
+    transition: none;
+  }
+}
+
+.main-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  background: var(--ion-toolbar-background);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.4);
+  border-bottom-left-radius: 50px;
+  border-bottom-right-radius: 50px;
+
+  .main-toolbar {
+    padding-top: $top-safe-area;
+    --min-height: $toolbar-height;
+    --background: var(--ion-toolbar-background);
+    --color: var(--ion-text-color);
+    --border-color: transparent;
+  }
+
+  .header-logo {
+    height: 28px;
+    width: auto;
+    filter: drop-shadow(0 0 3px rgba(255, 127, 0, 0.4));
+    vertical-align: middle;
+  }
+}
+
+.profile-condensing-area {
+  overflow: hidden;
+  transition: none;
+  will-change: transform, opacity;
+}
+
+.profile-content-padding {
+  padding-left: 16px;
+  padding-right: 16px;
+  padding-top: 10px;
+  padding-bottom: 16px;
+}
+
+.profile-info-row {
+  display: flex;
+  align-items: center;
+  justify-content: start;
+  margin: 0px 16px 10px 16px;
+  max-width: 100%;
+}
+
+.profile-photo {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background-size: cover;
+  background-position: center;
+  margin-right: 15px;
+  border: 1px solid var(--ion-color-primary);
+  box-shadow: 0 0 10px rgba(255, 127, 0, 0.5);
+}
+
+.user-details {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+
+  .user-name {
+    font-size: 1.1rem;
+    font-weight: bold;
+    color: var(--ion-text-color);
+  }
+
+  .user-level {
+    font-size: 0.8rem;
+    color: var(--ion-color-secondary);
+  }
+}
+
+.quick-actions {
+  background: #222222;
+  width: max-content;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2px;
+  max-width: 400px;
+  border-radius: 16px;
+  margin: auto;
+
+  ion-button {
+    --padding-start: 10px;
+    --padding-end: 10px;
+    font-size: 0.7rem;
+  }
+}
+
+.agenda-title,
+.progress-title {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  font-size: 1.2rem;
+}
+
+.progress-title {
+  margin-top: 25px;
+}
+
+.content-wrapper {
+  padding-left: 16px;
+  padding-right: 16px;
+}
+
+.section-title {
+  display: flex;
+  align-items: center;
+  margin-top: 30px;
+  margin-bottom: 15px;
+  font-size: 1.3rem;
+  font-weight: bold;
+  color: var(--ion-text-color);
+
+  ion-icon {
+    font-size: 1.5rem;
+    color: var(--ion-color-primary);
+    margin-left: 8px;
+  }
+
+  .badge {
+    font-size: 0.7rem;
+    font-weight: bold;
+    background: var(--ion-color-primary);
+    color: rgba(var(--ion-colorwhite-rgb), 0.2);
+    padding: 2px 6px;
+    border-radius: 16px;
+    margin-left: 10px;
+  }
+}
+
+.horizontal-scroll-section {
+  margin-left: -16px;
+  margin-right: -16px;
+  padding-left: 16px;
+  overflow-x: scroll;
+  overflow-y: hidden;
+  white-space: nowrap;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+.card-horizontal-container {
+  display: flex;
+  gap: 10px;
+  padding-right: 16px;
+}
+
+.last-section {
+  padding-bottom: 40px;
+}
+
+ion-card {
+  --background: var(--ion-card-background);
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  display: inline-block;
+  position: relative;
+  overflow: hidden;
+  margin: 0;
+
+  ion-card-title {
+    color: var(--ion-color-primary);
+  }
+
+  &[color="light"] {
+    --background: #333333;
+    color: var(--ion-text-color);
+
+    ion-card-title {
+      color: var(--ion-color-primary);
+    }
+  }
+
+  .card-overlay-text {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    padding: 10px;
+    width: 100%;
+    color: white;
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.7);
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}

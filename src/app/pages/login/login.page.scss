@@ -1,0 +1,81 @@
+@use "sass:color";
+
+:host {
+  ion-content {
+    --background: var(--ion-background-color);
+  }
+}
+
+.login-container {
+  padding-top: 20px;
+
+  .app-logo {
+    width: 150px;
+    height: auto;
+    margin-bottom: 10px;
+
+    filter: drop-shadow(0 0 5px rgba(255, 127, 0, 0.4));
+  }
+}
+
+.card-message {
+  margin-bottom: 15px;
+
+  p {
+    font-size: 1.5rem;
+    font-weight: 500;
+    margin: 0 0 5px 0;
+    color: var(--ion-text-color);
+  }
+
+  span {
+    display: block;
+    font-size: 1rem;
+    font-weight: 400;
+    color: rgba(255, 255, 255, 0.7);
+  }
+}
+
+ion-card {
+  --background: var(--ion-card-background);
+  border-radius: 12px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
+  padding: 10px 0;
+}
+
+ion-item {
+  --background: transparent;
+  --border-color: rgba(255, 255, 255, 0.1);
+
+  --color: var(--ion-text-color);
+
+  ion-input {
+    --placeholder-color: rgba(255, 255, 255, 0.5);
+  }
+}
+
+ion-item.item-has-focus ion-label {
+  color: var(--ion-color-primary) !important;
+}
+
+ion-button[type="submit"] {
+  height: 50px;
+  font-weight: bold;
+  font-size: 1.1rem;
+  --background: var(--ion-color-primary);
+}
+
+ion-button[fill="clear"] {
+  font-size: 0.9rem;
+  color: var(--ion-color-white);
+
+  &:active {
+    opacity: 0.7;
+  }
+}
+
+.error-message {
+  font-size: 0.75rem;
+  padding-top: 2px;
+  color: var(--ion-color-danger) !important;
+}

@@ -1,0 +1,105 @@
+ion-menu {
+  --menu-dark-bg: var(--ion-toolbar-background, #101010);
+  --background: var(--menu-dark-bg);
+
+  ion-header {
+    background: var(--menu-dark-bg);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    padding-bottom: 0;
+    padding-top: var(--ion-safe-area-top, 0);
+  }
+
+  .menu-profile-area {
+    display: flex;
+    align-items: center;
+    padding-top: 20px;
+    padding-bottom: 20px;
+  }
+
+  .profile-icon {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background: var(--ion-color-primary);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+
+  .profile-photo {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background-size: cover;
+    background-position: center;
+    border: 1px solid var(--ion-color-primary);
+    box-shadow: 0 0 10px rgba(255, 127, 0, 0.5);
+  }
+
+  .profile-icon ion-icon {
+    color: var(--ion-text-color);
+    font-size: 28px;
+  }
+
+  .user-name {
+    font-weight: bold;
+    font-size: 1.1em;
+    margin: 0;
+    color: var(--ion-text-color);
+  }
+
+  .user-level {
+    font-size: 0.8em;
+    margin: 0;
+    color: var(--ion-color-secondary-tint, rgba(255, 255, 255, 0.7));
+  }
+
+  ion-content {
+    --background: var(--menu-dark-bg);
+    --color: var(--ion-text-color);
+  }
+
+  ion-list {
+    padding: 0;
+  }
+
+  ion-item {
+    --background: var(--menu-dark-bg);
+    --color: var(--ion-text-color);
+    --padding-start: 18px;
+    --padding-end: 18px;
+    --pading-bottom: 3px;
+    --pading-top: 3px;
+    font-weight: 500;
+
+    &:hover, &.activated {
+      --background: rgba(255, 255, 255, 0.05); 
+    }
+  }
+
+  ion-icon[slot="start"][color="primary"] {
+    color: var(--ion-color-primary) !important;
+  }
+
+  ion-footer {
+    background: var(--menu-dark-bg);
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-bottom: calc(10px + var(--ion-safe-area-bottom, 0));
+  }
+
+  .logout-item {
+    --background: transparent;
+    --padding-start: 18px;
+    --padding-end: 18px;
+    margin: 0;
+  }
+
+  .logout-item ion-label[color="danger"],
+  .logout-item ion-icon[color="danger"] {
+    color: var(--ion-color-danger) !important;
+    font-weight: bold;
+  }
+}

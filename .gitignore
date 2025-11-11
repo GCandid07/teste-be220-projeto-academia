@@ -76,3 +76,28 @@ Thumbs.db
 
 # Environments
 .env
+
+#Capacitors
+# Android
+/android/build/
+/android/app/build/
+/android/.gradle/
+/android/.idea/
+/android/local.properties
+/android/*.iml
+/android/captures/
+/android/gradle-wrapper/
+/android/secrets.properties
+/android/key.properties
+/android/app/release/
+/android/app/debug/
+
+#IOS
+/ios/build/
+/ios/.swiftpm/
+/ios/.idea/
+/ios/Pods/
+/ios/DerivedData/
+/ios/Carthage/
+/ios/Package.resolved
+/ios/Package.xcworkspace/
