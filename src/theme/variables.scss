@@ -1,2 +1,43 @@
 // For information on how to create your own theme, please see:
 // http://ionicframework.com/docs/theming/
+@use "sass:color";
+
+$color-gym-primary: #FF7F00;         // Laranja vibrante
+$color-gym-secondary: #8A2BE2;       // Roxo vibrante
+$color-gym-background: #1A1A1A;      // Cinza Escuro
+$color-gym-header-text: #FFFFFF;     // Branco
+$color-gym-item-background: #252525; // Cinza Chumbo
+
+:root {
+  --ion-color-primary: #{$color-gym-primary};
+  --ion-color-primary-rgb: #{color.channel($color-gym-primary, "red")}, #{color.channel($color-gym-primary, "green")}, #{color.channel($color-gym-primary, "blue")};
+  
+  --ion-color-primary-contrast: #{$color-gym-header-text};
+  --ion-color-primary-contrast-rgb: #{color.channel($color-gym-header-text, "red")}, #{color.channel($color-gym-header-text, "green")}, #{color.channel($color-gym-header-text, "blue")};
+
+  --ion-color-primary-shade: #{color.adjust($color-gym-primary, $lightness: -5%)};
+  --ion-color-primary-tint: #{color.adjust($color-gym-primary, $lightness: 5%)};
+
+  --ion-color-secondary: #{$color-gym-secondary};
+  --ion-color-secondary-rgb: #{color.channel($color-gym-secondary, "red")}, #{color.channel($color-gym-secondary, "green")}, #{color.channel($color-gym-secondary, "blue")};
+
+  --ion-color-secondary-contrast: #{$color-gym-header-text};
+  --ion-color-secondary-contrast-rgb: #{color.channel($color-gym-header-text, "red")}, #{color.channel($color-gym-header-text, "green")}, #{color.channel($color-gym-header-text, "blue")};
+
+  --ion-color-secondary-shade: #{color.adjust($color-gym-secondary, $lightness: -5%)};
+  --ion-color-secondary-tint: #{color.adjust($color-gym-secondary, $lightness: 5%)};
+
+  --ion-color-success: #28a745;
+  --ion-color-danger: #dc3545;
+
+  --ion-background-color: #{$color-gym-background};
+  --ion-background-color-rgb: #{color.channel($color-gym-background, "red")}, #{color.channel($color-gym-background, "green")}, #{color.channel($color-gym-background, "blue")};
+
+  --ion-item-background: #252525;
+  --ion-card-background: #252525;
+
+  --ion-text-color: #{$color-gym-header-text};
+  --ion-text-color-rgb: #{color.channel($color-gym-header-text, "red")}, #{color.channel($color-gym-header-text, "green")}, #{color.channel($color-gym-header-text, "blue")};
+
+  --ion-toolbar-background: #1A1A1A;
+}
